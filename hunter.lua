@@ -9,7 +9,6 @@ if UnitClass('player') ~= 'Hunter' then
 	return
 end
 
-local _,_,_,_,islearned = GetTalentInfo(3,14)
 local counterattack
 local CA_Timer = 0
 local MB_Timer = 0
