@@ -1,0 +1,6 @@
+## Interface: 11200
+## Title: MB CA icons
+## Notes: Displays mb and ca icons when they can be used /hunticons
+
+hunter.lua
+hunter.xml

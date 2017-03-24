@@ -1,0 +1,77 @@
+<Ui xmlns='http://www.blizzard.com/wow/ui/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:schemaLocation='http://www.blizzard.com/wow/ui/'>
+	<Frame name='CA_Frame' parent='UIParent' enableMouse='true' movable='true' hidden='true'>
+		<Size>
+			<AbsDimension x='64' y='64'/>
+		</Size>
+		<Anchors>
+			<Anchor point='CENTER'>
+				<Offset>
+					<AbsDimension x='-32'/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level='ARTWORK'>
+				<Anchors>
+                    <Anchor point='TOPLEFT'/>
+                </Anchors>
+				<Texture name='$parent_Background' file='Interface\Icons\Ability_Warrior_Challange'>
+                    <Size>
+                        <AbsDimension x='64' y='64'/>
+                    </Size>
+					<TexCoords left='0.0703125' right='0.9140625' top='0.078125' bottom='0.90625'/>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnMouseDown>
+				if hunterlock == 1 then
+					CA_Frame:StartMoving()
+				else
+					DEFAULT_CHAT_FRAME:AddMessage('/hunticons to move')
+				end
+			</OnMouseDown>
+			<OnMouseUp>
+				CA_Frame:StopMovingOrSizing()
+			</OnMouseUp>
+		</Scripts>
+	</Frame>
+	<Frame name='MB_Frame' parent='UIParent' enableMouse='true' movable='true' hidden='true'>
+		<Size>
+			<AbsDimension x='64' y='64'/>
+		</Size>
+		<Anchors>
+			<Anchor point='CENTER'>
+				<Offset>
+					<AbsDimension x='32'/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level='ARTWORK'>
+				<Anchors>
+                    <Anchor point='TOPLEFT'/>
+                </Anchors>
+				<Texture name='$parent_Background' file='Interface\Icons\Ability_Hunter_SwiftStrike'>
+                    <Size>
+                        <AbsDimension x='64' y='64'/>
+                    </Size>
+					<TexCoords left='0.0703125' right='0.9140625' top='0.078125' bottom='0.90625'/>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnMouseDown>
+				if hunterlock == 1 then
+					MB_Frame:StartMoving()
+				else
+					DEFAULT_CHAT_FRAME:AddMessage('/hunticons to move')
+				end
+			</OnMouseDown>
+			<OnMouseUp>
+				MB_Frame:StopMovingOrSizing()
+			</OnMouseUp>
+		</Scripts>
+	</Frame>
+</Ui>
