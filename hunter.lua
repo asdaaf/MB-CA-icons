@@ -19,12 +19,7 @@ local f = CreateFrame("Frame")
 
 f:RegisterEvent('CHAT_MSG_COMBAT_CREATURE_VS_SELF_MISSES')
 f:RegisterEvent('CHAT_MSG_SPELL_SELF_DAMAGE')
-
-if islearned == 1 then	
-	counterattack = true
-else
-	counterattack = false
-end
+f:RegisterEvent('PLAYER_ALIVE')
 
 function hunter_OnUpdate()
 	if GetTime() >= MB_Timer then
@@ -60,6 +55,15 @@ function CA_Frame_OnEvent()
 			MB_Frame:Show()
 			f:SetScript('OnUpdate', hunter_OnUpdate)
 		end
+	end
+	if event == 'PLAYER_ALIVE' then
+		local _,_,_,_,islearned = GetTalentInfo(3,14)
+		if islearned == 1 then	
+			counterattack = true
+		else
+			counterattack = false
+		end
+		f:UnregisterEvent('PLAYER_ALIVE')
 	end
 end
 
